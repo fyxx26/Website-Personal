@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Tambah Berkas Arsip{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-4">Tambah Berkas Arsip</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Judul Berkas</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Deskripsi</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">File Berkas</label>
+                <input class="form-control" type="file" id="file" name="file" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Kembali</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
